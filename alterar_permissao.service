@@ -1,0 +1,16 @@
+[Unit]
+Description=Monitorar diretórios e ajustar permissões de arquivos
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/caminho/para/seu/script.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+StartLimitInterval=30s
+StartLimitBurst=5
